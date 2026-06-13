@@ -1,0 +1,7 @@
+{"timestamp":"2024-06-13T14:00:01Z","level":"info","service":"payment-service","message":"Payment processing started","request_id":"req-001","user_id":"u-9921"}
+{"timestamp":"2024-06-13T14:00:02Z","level":"warn","service":"payment-service","message":"Database connection pool at 90% capacity","pool_size":100,"active":90}
+{"timestamp":"2024-06-13T14:00:03Z","level":"error","service":"payment-service","message":"connection refused: postgres:5432","request_id":"req-002","error":"dial tcp 10.0.2.5:5432: connect: connection refused"}
+{"timestamp":"2024-06-13T14:00:03Z","level":"error","service":"payment-service","message":"connection refused: postgres:5432","request_id":"req-003","error":"dial tcp 10.0.2.5:5432: connect: connection refused"}
+{"timestamp":"2024-06-13T14:00:04Z","level":"error","service":"payment-service","message":"connection refused: postgres:5432","request_id":"req-004","error":"dial tcp 10.0.2.5:5432: connect: connection refused"}
+{"timestamp":"2024-06-13T14:00:05Z","level":"error","service":"payment-service","message":"Failed to process payment - database unavailable","request_id":"req-005","amount":149.99}
+{"timestamp":"2024-06-13T14:00:06Z","level":"error","service":"payment-service","message":"Health check failed","component":"db","status":"unreachable"}
