@@ -1,11 +1,14 @@
 import sys
 import os
-import streamlit as st
-from dotenv import load_dotenv
 
 # 1. Setup the path BEFORE doing anything else
 # This adds the root directory to your path so Python can find 'graph' and 'schemas'
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+import streamlit as st
+from dotenv import load_dotenv
+from utils.slack_notifier import send_slack_message
 
 # 2. Now import your project modules
 from graph import app  # Now this will work because the path is updated
@@ -31,3 +34,10 @@ if uploaded_file and st.button("Analyze Logs"):
         st.write("### Root Cause:", result.get("root_cause", "No root cause found."))
         st.write("### Recommended Fix:", result.get("remediation_plan", "No fix identified."))
         st.write("### Ticket Created:", result.get("ticket_details", "No ticket details."))
+
+        msg = f"🚀 *Analysis Complete*\n*Root Cause:* {result.get('root_cause')}\n*Fix:* {result.get('remediation_plan')}"
+    
+    # Send to Slack
+    send_slack_message(msg)
+    
+    st.success("Analysis complete and sent to Slack!")
