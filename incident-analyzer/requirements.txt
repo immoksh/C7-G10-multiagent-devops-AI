@@ -1,0 +1,13 @@
+streamlit
+langgraph
+langchain
+langchain-community
+langchain-huggingface
+langchain-openai
+langchain-chroma
+chromadb
+jira
+slack-sdk
+python-dotenv
+pydantic
+sentence-transformers
