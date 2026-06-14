@@ -157,6 +157,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# Generated ChromaDB runbook index (rebuild with: python -m vectorstore.ingest)
+vectorstore/chroma_db/
+
 # Spyder project settings
 .spyderproject
 .spyproject

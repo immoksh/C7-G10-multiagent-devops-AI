@@ -1,0 +1,18 @@
+# Streamlit configuration
+#
+# The runbook RAG uses sentence-transformers, which imports HuggingFace
+# `transformers`. Streamlit's hot-reload watcher introspects every loaded
+# module and trips over `transformers`' optional vision processors that
+# lazily import `torchvision` (not installed, and not needed for text
+# embeddings). Those produce noisy but harmless "Examining the path ...
+# raised: ModuleNotFoundError: No module named 'torchvision'" warnings.
+#
+# Raising the logger level to "error" silences that cosmetic noise while
+# keeping real errors and hot-reload intact.
+
+[logger]
+level = "error"
+
+[server]
+# Event-based watching that ignores library internals keeps reloads snappy.
+fileWatcherType = "auto"

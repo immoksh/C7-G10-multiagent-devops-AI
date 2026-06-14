@@ -1,0 +1,27 @@
+# --- Core orchestration ---
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+
+# --- LLM layer ---
+# OpenRouter (OpenAI-compatible) — used for chat models like gpt-4o-mini
+langchain-openai>=0.2.0
+# Hugging Face Inference — optional alternative chat provider
+langchain-huggingface>=0.1.0
+huggingface-hub>=0.25.0
+
+# --- Vector store / RAG ---
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+
+# --- UI ---
+streamlit>=1.36.0
+
+# --- Integrations ---
+slack-sdk>=3.27.0
+jira>=3.8.0
+
+# --- Utilities ---
+python-dotenv>=1.0.0
+pydantic>=2.7.0
